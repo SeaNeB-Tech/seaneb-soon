@@ -44,7 +44,18 @@ export default function Navbar() {
               />
             </a>
 
-            <ul className="hidden md:flex space-x-6">
+            <ul className="hidden md:flex items-center space-x-6">
+              <li>
+                <a
+                  href="https://about.seaneb.com/list-your-business"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-black px-4 py-2 rounded-md text-sm lg:text-base font-medium hover:bg-gray-200 transition duration-200"
+                >
+                  List Your Business Free
+                </a>
+              </li>
+
               {navItems.map((item) => (
                 <li key={item.name}>
                   <a
@@ -60,6 +71,7 @@ export default function Navbar() {
             </ul>
 
 
+
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -72,12 +84,13 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={`md:hidden fixed top-16 left-0 w-full bg-black/90 backdrop-blur-md text-white transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
             }`}
         >
-          <ul className="flex flex-col items-center py-4 space-y-3">
+          <ul className="flex flex-col items-center py-4 space-y-4">
+
+
             {navItems.map((item) => (
               <li key={item.name}>
                 <a
@@ -90,7 +103,20 @@ export default function Navbar() {
                   {item.name}
                 </a>
               </li>
+
+
             ))}
+            <li>
+              <a
+                href="https://about.seaneb.com/list-your-business"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-black px-6 py-2 rounded-md font-medium text-base hover:bg-gray-200 transition"
+                onClick={() => setMenuOpen(false)}
+              >
+                List Your Business Free
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
